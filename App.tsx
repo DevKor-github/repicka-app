@@ -5,7 +5,7 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <WebView
-        source={{uri: 'https://devkor-github.github.io/repicka-web/'}}
+        source={{uri: 'https://repicka.netlify.app/'}}
         scrollEnabled={false}
         overScrollMode="never"
         bounces={false}
