@@ -11,7 +11,7 @@ export default function App() {
     <SafeAreaView style={{flex: 1, backgroundColor: '#1C1C1E'}}>
       <StatusBar barStyle="light-content" />
       <WebView
-        source={{uri: 'https://repicka.netlify.app/'}}
+        source={{uri: 'https://repicka-back-dev.shop'}}
         scrollEnabled={false}
         overScrollMode="never"
         bounces={false}
