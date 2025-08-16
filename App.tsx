@@ -15,6 +15,7 @@ export default function App() {
         scrollEnabled={false}
         overScrollMode="never"
         bounces={false}
+        allowsBackForwardNavigationGestures
       />
     </SafeAreaView>
   );
