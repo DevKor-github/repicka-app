@@ -42,3 +42,5 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+repicka-firebase-adminsdk.json
