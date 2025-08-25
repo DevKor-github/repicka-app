@@ -1,26 +1,6 @@
-import {useEffect, useState} from 'react';
-import {Platform} from 'react-native';
-import UserAgent from 'react-native-user-agent';
-
 const useCustomUserAgent = () => {
-  const [customUserAgent, setCustomUserAgent] = useState('customUserAgent');
-
-  const changeUserAgent = async () => {
-    try {
-      const userAgent = await UserAgent.getWebViewUserAgent();
-      const agent =
-        Platform.OS === 'ios'
-          ? userAgent + ' Safari/604.1'
-          : userAgent?.substring(0, userAgent?.indexOf('Chrome'));
-      setCustomUserAgent(agent);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  useEffect(() => {
-    changeUserAgent();
-  }, []);
+  const customUserAgent =
+    'Mozilla/5.0 (Linux; Android 10; Android SDK built for x86 Build/LMY48X) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/81.0.4044.117 Mobile Safari/608.2.11';
 
   return customUserAgent;
 };
