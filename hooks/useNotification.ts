@@ -34,6 +34,10 @@ const useNotification = (webViewRef: React.RefObject<WebView | null>) => {
         throw new Error('No permission for push notifications');
       }
 
+      if (Platform.OS === 'ios') {
+        await messaging().registerDeviceForRemoteMessages();
+      }
+
       const token = await messaging().getToken();
       // 아이폰은 FCM 토큰 발급이 오류가 있음, 안드로이드는 정상
       // https://velog.io/@bcgo99/The-operation-couldnt-be-completed.-No-APNS-token-specified-before-fetching-FCM-Token
