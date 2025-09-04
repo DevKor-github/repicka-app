@@ -27,13 +27,19 @@ export default function App() {
       <WebView
         ref={webViewRef}
         onNavigationStateChange={handleNavigationStateChange}
-        source={{uri: 'https://repicka-back-dev.shop'}}
+        source={{uri: 'https://repicka.shop/'}}
         scrollEnabled={false}
         overScrollMode="never"
         bounces={false}
         userAgent={customUserAgent}
         allowsBackForwardNavigationGestures
         onMessage={onMessageFromWebView}
+        originWhitelist={['*']}
+        javaScriptEnabled
+        domStorageEnabled
+        sharedCookiesEnabled // iOS/Android 둘 다 쿠키 공유 허용
+        thirdPartyCookiesEnabled // Android에서 쿠키 허용
+        mixedContentMode="always"
       />
     </SafeAreaView>
   );
