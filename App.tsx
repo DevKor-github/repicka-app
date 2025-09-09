@@ -1,4 +1,4 @@
-import {StatusBar} from 'react-native';
+import {KeyboardAvoidingView, Platform, StatusBar} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import WebView, {type WebViewMessageEvent} from 'react-native-webview';
 import * as NavigationBar from 'expo-navigation-bar';
@@ -22,25 +22,29 @@ export default function App() {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#1C1C1E'}}>
-      <StatusBar barStyle="light-content" />
-      <WebView
-        ref={webViewRef}
-        onNavigationStateChange={handleNavigationStateChange}
-        source={{uri: 'https://repicka.shop/'}}
-        scrollEnabled={false}
-        overScrollMode="never"
-        bounces={false}
-        userAgent={customUserAgent}
-        allowsBackForwardNavigationGestures
-        onMessage={onMessageFromWebView}
-        originWhitelist={['*']}
-        javaScriptEnabled
-        domStorageEnabled
-        sharedCookiesEnabled // iOS/Android 둘 다 쿠키 공유 허용
-        thirdPartyCookiesEnabled // Android에서 쿠키 허용
-        mixedContentMode="always"
-      />
-    </SafeAreaView>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: '#1C1C1E'}}>
+        <StatusBar barStyle="light-content" />
+        <WebView
+          ref={webViewRef}
+          onNavigationStateChange={handleNavigationStateChange}
+          source={{uri: 'https://repicka.shop/'}}
+          scrollEnabled={false}
+          overScrollMode="never"
+          bounces={false}
+          userAgent={customUserAgent}
+          allowsBackForwardNavigationGestures
+          onMessage={onMessageFromWebView}
+          originWhitelist={['*']}
+          javaScriptEnabled
+          domStorageEnabled
+          sharedCookiesEnabled
+          thirdPartyCookiesEnabled
+          mixedContentMode="always"
+        />
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
