@@ -16,11 +16,14 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.company.repicka",
       "infoPlist": {
+        "UIBackgroundModes": [
+          "remote-notification"
+        ],
         "ITSAppUsesNonExemptEncryption": false
       },
       "googleServicesFile": "./GoogleService-Info.plist",
       "entitlements": {
-        "aps-environment": "development"
+        "aps-environment": "production"
       }
     },
     "android": {

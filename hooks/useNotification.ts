@@ -40,6 +40,8 @@ const useNotification = (webViewRef: React.RefObject<WebView | null>) => {
 
       const token = await messaging().getToken();
 
+      console.log('token', token);
+
       await sendTokenToServer(token);
       return token;
     } catch (error) {
