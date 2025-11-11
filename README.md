@@ -2,6 +2,12 @@
 
 에프기210도7분 화이띵
 
+레플리카를 쉽게 대여/판매할 수 있는 플랫폼
+
+### 사용 스택
+
+![used-stack-icons](https://skills.syvixor.com/api/icons?perline=15&i=reactnative,expo)
+
 ### 커밋 컨벤션
 
 - feat: 설명설명
